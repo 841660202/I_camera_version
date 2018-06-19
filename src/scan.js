@@ -22,6 +22,8 @@ import ViewFinder from './viewFinder';
 
 import backIcon from './img/backIcon.png';//返回按钮
 import scanLine from './img/scan_line.png';//扫描线
+import flash_on from './img/flash_on.png';//扫描线
+import flash_off from './img/flash_off.png';//扫描线
 
 export default class Scan extends Component {
     constructor(props) {
@@ -74,7 +76,7 @@ export default class Scan extends Component {
                 this.changeState(false);
                 //通过条码编号获取数据
             }
-            console.log("transCode="+this.transCode);
+            alert("transCode="+this.transCode);
         }
     }
     //返回按钮点击事件
@@ -116,7 +118,9 @@ export default class Scan extends Component {
                                 onBarCodeRead={
                                     this.barcodeReceived
                                 }
-                                torchMode={openFlash ? 'on' : 'off'}>
+                                AutoFocus={'on'}
+                                flashMode={openFlash ? RNCamera.Constants.FlashMode.torch : RNCamera.Constants.FlashMode.off}
+                                >
                                 <View style={styles.container}>
                                     <View style={styles.titleContainer}>
                                         <View style={styles.leftContainer}>
@@ -163,10 +167,12 @@ export default class Scan extends Component {
                                     </Text>
                                     <TouchableOpacity onPress={this._changeFlash}>
                                         <View style={styles.flash}>
-                                            <Text style={styles.text}>
-                                                开灯/关灯
-                                            </Text>
+                                            {/*<Text style={styles.text}>*/}
+                                                {/*开灯/关灯*/}
+                                            {/*</Text>*/}
+                                            <Image style={styles.flashImg} source={openFlash ? flash_on : flash_off}/>
                                         </View>
+
                                     </TouchableOpacity>
                                 </View>
                             </RNCamera>
@@ -224,7 +230,10 @@ const styles =StyleSheet.create({
         justifyContent: 'flex-start',
         marginTop: 60,
     },
-    flashIcon: {
+    flashImg: {
+        width: 40,
+        height: 40,
+    }, flashIcon: {
         fontSize: 1,
         color: '#fff',
     },

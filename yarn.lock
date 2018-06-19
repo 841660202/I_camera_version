@@ -3843,9 +3843,9 @@ react-is@^16.3.1:
   version "16.4.1"
   resolved "http://r.cnpmjs.org/react-is/download/react-is-16.4.1.tgz#d624c4650d2c65dbd52c72622bbf389435d9776e"
 
-react-native-camera@1.1.0:
-  version "1.1.0"
-  resolved "http://r.cnpmjs.org/react-native-camera/download/react-native-camera-1.1.0.tgz#81d0191c4833b23910a757f9514d106a6ecee136"
+react-native-camera@1.1.4:
+  version "1.1.4"
+  resolved "http://r.cnpmjs.org/react-native-camera/download/react-native-camera-1.1.4.tgz#5a01be906507cc2f232405f903c52c9d99988dba"
   dependencies:
     lodash "^4.17.4"
     prop-types "^15.5.10"
